@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Gillhead</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  <span class="announcement-message">Loading...</span>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="Images/modern gillhead.png" alt="Gillhead Logo">
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ============================
+     ABOUT PAGE CONTENT
+     ============================ -->
+
+<div class="page-container">
+
+  <!-- ABOUT IMAGE 1 -->
+  <section class="cubby-image">
+  <img class="cubby-image-wrapper" src="Images/Natural white fishin.png" alt="Description">
+</section>
+
+
+  <!-- ABOUT SECTION 1 -->
+  <section class="cubby">
+    <h2>Where Southern Angling Meets Everyday Life</h2>
+    <p>
+      There’s a rhythm to the South that you can’t learn from a book. It’s early mornings on still water, the hum of a trolling motor before sunrise, and the quiet confidence of anglers who let the fish tell the story.
+    </p>
+    <p>
+      Gillhead was built on that rhythm. We’re a small Southern company with a simple belief: <strong>Fishing isn’t a hobby — it’s a lifestyle.</strong>
+    </p>
+  </section>
+
+  <!-- ABOUT IMAGE 2 -->
+  <section class="cubby-image">
+  <img class="cubby-image-wrapper" src="Images/frontofboat.png" alt="Description">
+</section>
+
+  <!-- ABOUT SECTION 2 -->
+  <section class="cubby">
+    <h2>Born From the Water</h2>
+    <p>
+      Gillhead started with a beat‑up boat, a couple of friends, and a shared obsession with chasing freshwater giants. We weren’t trying to build a brand — we were trying to build gear that felt like us.
+    </p>
+    <p>
+      Clothes that can handle a long day on the lake but still look good in town. Designs that nod to Southern angling culture without being loud or gimmicky.
+    </p>
+  </section>
+
+  <!-- ABOUT IMAGE 3 -->
+<section class="cubby-image">
+  <img class="cubby-image-wrapper" src="Images/sidetocam.png" alt="Description">
+</section>
+
+  <!-- ABOUT SECTION 3 -->
+  <section class="cubby">
+    <h2>What We Stand For</h2>
+    <p><strong>Authenticity</strong> — We don’t chase trends. We build gear rooted in real Southern fishing culture.</p>
+    <p><strong>Quality Over Quantity</strong> — If it doesn’t meet our standards, it doesn’t ship.</p>
+    <p><strong>Community First</strong> — Gillhead is for the anglers who live this life for real.</p>
+  </section>
+
+  <!-- ABOUT IMAGE 4 -->
+ <section class="cubby-image">
+  <img class="cubby-image-wrapper" src="Images/Depthfinder.png" alt="Description">
+</section>
+
+  <!-- ABOUT SECTION 4 -->
+  <section class="cubby">
+    <h2>Hooked For Life</h2>
+    <p>
+      Whether you’re a weekend warrior, a tournament grinder, or someone who just loves the peace of a quiet morning on the water — welcome to the family.
+    </p>
+  </section>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  © <span id="year"></span> Gillhead. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  const messages = [
+    "Fast & Easy Shipping",
+    "All Major Credit Cards Accepted",
+    "Find Us On Social Media",
+    "Fulfilled Through Printful"
+  ];
+  let index = 0;
+  const messageEl = document.querySelector(".announcement-message");
+  function rotateMessage() {
+    messageEl.style.opacity = 0;
+    setTimeout(() => {
+      messageEl.textContent = messages[index];
+      messageEl.style.opacity = 1;
+      index = (index + 1) % messages.length;
+    }, 600);
+  }
+  rotateMessage();
+  setInterval(rotateMessage, 3500);
+</script>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("open");
+  });
+</script>
+
+</body>
+</html>

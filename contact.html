@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Gillhead</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  <span class="announcement-message">Loading...</span>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="Images/modern gillhead.png" alt="Gillhead Logo">
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ============================
+     CONTACT PAGE CONTENT
+     ============================ -->
+
+<div class="page-container">
+
+  <!-- HERO IMAGE -->
+  <section class="shop-hero">
+    <img src="Images/Artboard 1.png" alt="Contact Hero">
+  </section>
+
+  <!-- CONTACT INTRO -->
+  <section class="cubby">
+    <h2>Get In Touch</h2>
+    <p>
+      We’re a small Southern brand built on real conversations, real anglers, and real stories.  
+      Whether you’ve got a question about an order, want to collaborate, or just want to talk fishing — we’re here for it.
+    </p>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="cubby">
+    <h2>Support & Partnerships</h2>
+
+    <div class="cubby-grid">
+
+      <div class="contact-card">
+        <h3>Customer Support</h3>
+        <p>Need help with sizing, shipping, or an order?</p>
+        <p><strong>All our products are printed on demand through Printful: First, contact them through their website and have order number ready; if problem persists please send us a message. </p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Wholesale & Partnerships</h3>
+        <p>Interested in carrying Gillhead gear or collaborating?</p>
+        <p><strong>Send us a message below or DM on Social Media and please include contact info.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SHARE YOUR STORY -->
+  <section class="cubby">
+    <h2>Share Your Story</h2>
+    <p>
+      Some of our best designs come from the water — from the people who live this lifestyle every day.  
+      Got a catch worth bragging about or a story worth telling? Send it our way.
+    </p>
+    <p><strong>Instagram:</strong> @OfficialGillhead</p>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="cubby">
+    <h2>Send Us a Message</h2>
+
+  <form target="_blank" action="https://formsubmit.co/aabba8e93942ddd066ec51142a717054" method="POST">
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col">
+          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+        </div>
+        <div class="col">
+          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+  </form>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © <span id="year"></span> Gillhead. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  const messages = [
+    "Fast & Easy Shipping",
+    "All Major Credit Cards Accepted",
+    "Find Us On Social Media",
+    "Fulfilled Through Printful"
+  ];
+  let index = 0;
+  const messageEl = document.querySelector(".announcement-message");
+  function rotateMessage() {
+    messageEl.style.opacity = 0;
+    setTimeout(() => {
+      messageEl.textContent = messages[index];
+      messageEl.style.opacity = 1;
+      index = (index + 1) % messages.length;
+    }, 600);
+  }
+  rotateMessage();
+  setInterval(rotateMessage, 3500);
+</script>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("open");
+  });
+</script>
+
+</body>
+</html>

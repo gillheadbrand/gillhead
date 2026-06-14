@@ -1,0 +1,710 @@
+/* ==========================================================
+   GILLHEAD BRAND COLORS
+   ========================================================== */
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --kelly: #004d00;
+  --crimson: #9E1B32;
+  --gray: #f4f4f4;
+  --dark-gray: #333333;
+}
+
+/* ==========================================================
+   GLOBAL
+   ========================================================== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==========================================================
+   ANNOUNCEMENT BAR — SLIDE + FADE
+   ========================================================== */
+.announcement-bar {
+  width: 100%;
+  background: var(--kelly);
+  color: var(--white);
+  padding: 8px 0;
+  min-height: 28px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--crimson);
+
+  position: sticky;
+  top: 0;
+  z-index: 30;
+
+  animation: slideDown 0.6s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.announcement-message {
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+/* ==========================================================
+   HEADER + NAVIGATION
+   ========================================================== */
+/* HEADER */
+header {
+  background: var(--white);
+  border-bottom: 0px solid var(--kelly);
+  height: 110px; /* header height stays locked */
+  padding: 0 40px;
+  display: flex;
+  justify-content: flex-end; /* nav moves to the right */
+  align-items: center;
+  position: sticky;
+  top: 28px;
+  z-index: 20;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  position: sticky;
+}
+
+/* LOGO BECOMES ITS OWN LAYER */
+.logo {
+  position: absolute;
+  left: 40px; /* same as header padding */
+  top: 50%;
+  transform: translateY(-43%); /* perfectly centered vertically */
+  height: 100%; /* but does NOT affect header height */
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO IMAGE CAN NOW BE ANY SIZE WITHOUT CHANGING HEADER */
+.logo img {
+  max-height: 300px; /* make it big */
+  width: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+
+.desktop-nav a {
+  margin-left: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: var(--kelly);
+  padding: 8px 14px;
+  border: 2px solid var(--kelly);
+  border-radius: 6px;
+  transition: 0.25s;
+}
+
+.desktop-nav a:hover {
+  background: var(--crimson);
+  color: var(--white);
+}
+
+/* ==========================================================
+   HAMBURGER MENU
+   ========================================================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--black);
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--white);
+  border-bottom: 3px solid var(--kelly);
+  padding: 20px;
+  text-align: center;
+  gap: 20px;
+
+  transform: translateY(-100%);
+  transition: 0.35s ease;
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+}
+
+.mobile-menu a {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* ==========================================================
+   DUAL HERO IMAGES
+   ========================================================== */
+.hero-cubby {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.hero-cubby .hero-image img {
+  width: 100%;
+  height: 600px;              /* same height as dual hero */
+  object-fit: cover;
+  object-position: 50% 30%;   /* same crop focus */
+  border-radius: 10px;        /* same rounded corners */
+  border: 3px solid var(--kelly); /* same border */
+}
+
+/* ==========================================================
+   SECTIONS
+   ========================================================== */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  color: var(--kelly);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+/* ==========================================================
+   GRID + CARDS
+   ========================================================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--gray);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid var(--kelly);
+  transition: 0.25s;
+  cursor: pointer;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.card:hover {
+  border-color: var(--crimson);
+  transform: scale(1.03);
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 3px solid var(--kelly);
+  margin-top: 60px;
+  color: #777;
+  font-size: 15px;
+  background: var(--white);
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .dual-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .dual-hero .hero-image img {
+    height: 260px;
+  }
+}
+
+/* ==========================================================
+   ABOUT & CONTACT PAGE HERO SECTIONS
+   ========================================================== */
+
+.about-hero {
+  width: 100%;
+  height: 380px; /* adjust for bigger hero images */
+  background: var(--gray);
+  border-top: 3px solid var(--kelly);
+  border-bottom: 3px solid var(--kelly);
+  margin: 40px 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* If you add background images later */
+.about-hero img,
+.about-hero picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================
+   ABOUT & CONTACT PAGE TEXT BLOCKS
+   ========================================================== */
+
+.about-section,
+.contact-section {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.text-block {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  color: var(--dark-gray);
+}
+
+/* ==========================================================
+   CONTACT PAGE — TWO COLUMN GRID
+   ========================================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.contact-card {
+  background: var(--gray);
+  border: 2px solid var(--kelly);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.contact-card h3 {
+  margin-top: 0;
+  color: var(--kelly);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.contact-card p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   CONTACT FORM — PREMIUM STYLE
+   ========================================================== */
+
+.contact-form {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 40px;
+  background: var(--white);
+  border: 2px solid var(--kelly);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-form h3 {
+  margin-top: 0;
+  color: var(--kelly);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--dark-gray);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--kelly);
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: inherit;
+  background: var(--gray);
+}
+
+.contact-form textarea {
+  height: 160px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background: var(--kelly);
+  color: var(--white);
+  border: none;
+  padding: 14px 26px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.contact-form button:hover {
+  background: var(--crimson);
+}
+
+/* ==========================================================
+   RESPONSIVE CONTACT PAGE
+   ========================================================== */
+
+@media (max-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero {
+    height: 260px;
+  }
+}
+.shop-all-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--kelly);
+  color: var(--white);
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: 2px solid var(--kelly);
+  transition: 0.25s;
+}
+
+.shop-all-btn:hover {
+  background: var(--crimson);
+  border-color: var(--crimson);
+}
+/* ==========================================================
+   PAGE CONTAINER — Controls page width
+   ========================================================== */
+.page-container {
+  width: 100%;
+  max-width: 1100px;   /* tighter, cleaner width */
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   CUBBY SECTIONS — Clean boxed layout
+   ========================================================== */
+.cubby {
+  background: var(--white);
+  border: 2px solid var(--kelly);
+  border-radius: 12px;
+  padding: 40px;
+  margin: 50px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Override your old .section styling */
+.section.cubby {
+  padding: 40px !important;
+  margin: 50px 0 !important;
+  text-align: left !important;
+}
+
+/* ==========================================================
+   CUBBY TITLES
+   ========================================================== */
+.cubby h2 {
+  margin-top: 0;
+  color: var(--kelly);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================
+   CUBBY TEXT
+   ========================================================== */
+.cubby p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--dark-gray);
+  margin-bottom: 20px;
+}
+
+/* ==========================================================
+   CUBBY GRID — For product cards & prospective releases
+   ========================================================== */
+.cubby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Force product cards to fit inside cubbies */
+.cubby-grid .product-card,
+.cubby-grid .prospective-card,
+.cubby-grid .card {
+  margin: 0 !important;
+  width: 100%;
+}
+
+/* ==========================================================
+   SHOP HERO + CATEGORY HERO (Centered & Clean)
+   ========================================================== */
+.triple-hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.triple-hero .hero-image img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-radius: 10px;
+  border: 3px solid var(--kelly);
+  display: block;
+}
+/* PRODUCT GRID — matches triple hero spacing */
+.cubby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* PRODUCT GRID — fits 3–4 cards per row */
+.cubby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* PRODUCT CARD — keeps everything INSIDE the cubby */
+.product-card {
+  background: var(--gray);
+  border: 2px solid var(--kelly);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.25s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;          /* ⭐ keeps carousel inside the box */
+}
+
+.product-card:hover {
+  border-color: var(--crimson);
+  transform: scale(1.03);
+}
+
+/* CAROUSEL WRAPPER — stays inside card */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;          /* ⭐ prevents arrows from pushing outside */
+  border-radius: 10px;
+}
+
+/* CAROUSEL IMAGE — natural size, no cropping */
+.carousel-image {
+  width: 100%;
+  height: auto;
+  max-height: 220px;         /* ⭐ keeps images from being too tall */
+  object-fit: contain;       /* ⭐ shows full product */
+  background: white;
+  border-radius: 10px;
+  border: 2px solid var(--kelly);
+  padding: 10px;
+  display: block;
+}
+
+/* ARROWS — smaller, centered, inside the card */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.35);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 5;
+  transition: 0.2s;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.left-arrow {
+  left: 8px;
+}
+
+.right-arrow {
+  right: 8px;
+}
+
+/* PRODUCT TEXT */
+.product-card h3 {
+  font-size: 18px;
+  margin: 0;
+  color: var(--kelly);
+}
+
+.product-card p {
+  font-size: 16px;
+  margin: 0;
+  color: var(--dark-gray);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .carousel-image {
+    max-height: 170px;
+  }
+}
+* Prospective card uses same box style as product cards */
+.prospective-card {
+  background: var(--gray);
+  border: 2px solid var(--kelly);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: 0.25s;
+  overflow: hidden; /* ⭐ keeps images inside the card */
+}
+
+.prospective-card:hover {
+  border-color: var(--crimson);
+  transform: scale(1.03);
+}
+
+/* Three images side-by-side */
+.prospective-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.prospective-images img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid var(--kelly);
+}
+.video-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* adjust height if needed */
+  overflow: hidden;
+  border-radius: 12px; /* matches your site style */
+  margin-bottom: 40px;
+}
+
+.video-hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the hero area */
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.video-overlay h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.video-overlay p {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}

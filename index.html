@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gillhead – Hooked For Life</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  <span class="announcement-message">Loading...</span>
+</div>
+
+<!-- Header -->
+<header>
+  <a href="index.html" class="logo">
+    <img src="Images/modern gillhead.png" alt="Gillhead Logo">
+  </a>
+
+  <!-- Desktop Nav -->
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hamburger Button -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Dual Hero Images -->
+<section class="hero-cubby">
+  <div class="hero-image">
+    <img src="Images/IMG_9620.jpeg" alt="Gillhead Hero">
+  </div>
+</section>
+
+<div class="page-container">
+
+  <section class="triple-hero">
+  <div class="hero-image">
+    <img src="Images/IMG_9616.jpeg" alt="Hero 1">
+  </div>
+  <div class="hero-image">
+    <img src="Images/IMG_9617.jpeg" alt="Hero 2">
+  </div>
+  <div class="hero-image">
+    <img src="Images/IMG_9646.jpeg" alt="Hero 3">
+  </div>
+</section>
+
+<section class="video-hero">
+  <video autoplay muted loop playsinline>
+    <source src="Videos/20260421_041631000_iOS.mp4" type="video/mp4">
+  </video>
+
+  <div class="video-overlay">
+    <h1>Gillhead</h1>
+    <p>Southern Angling Apparel</p>
+  </div>
+</section>
+
+ <!-- SHOP ALL BUTTON -->
+  <section class="cubby" style="text-align:center;">
+    <a href="https://gillheadbrand.printful.me/" target="_blank" class="shop-all-btn">
+      Shop All Products
+    </a>
+  </section>
+
+<!-- Footer -->
+<footer>
+  © <span id="year"></span> Gillhead. All rights reserved.
+</footer>
+
+<!-- Year Script -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- Announcement Bar Script -->
+<script>
+  const messages = [
+    "Fast & Easy Shipping",
+    "All Major Credit Cards Accepted",
+    "Find Us On Social Media",
+    "Fulfilled Through Printful"
+  ];
+
+  let index = 0;
+  const messageEl = document.querySelector(".announcement-message");
+
+  function rotateMessage() {
+    messageEl.style.opacity = 0;
+
+    setTimeout(() => {
+      messageEl.textContent = messages[index];
+      messageEl.style.opacity = 1;
+      index = (index + 1) % messages.length;
+    }, 600);
+  }
+
+  rotateMessage();
+  setInterval(rotateMessage, 3500);
+</script>
+
+<!-- Mobile Menu Script -->
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("open");
+  });
+</script>
+
+</body>
+</html>
