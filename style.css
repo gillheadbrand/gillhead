@@ -444,6 +444,24 @@ footer {
   background: var(--crimson);
   border-color: var(--crimson);
 }
+}
+.lake-analyzer-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--kelly);
+  color: var(--white);
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  border: 2px solid var(--kelly);
+  transition: 0.25s;
+}
+
+.lake-analyzer-btn:hover {
+  background: var(--crimson);
+  border-color: var(--crimson);
+}
 /* ==========================================================
    PAGE CONTAINER — Controls page width
    ========================================================== */
