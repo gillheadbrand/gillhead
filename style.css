@@ -697,19 +697,19 @@ footer {
   position: relative;
   width: 100%;
   height: 70vh;
-  overflow: hidden;
+  overflow: hidden;        /* hides the extra width */
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Scale by height ALWAYS */
+/* Make the video fill the hero EXACTLY like your images */
 .video-hero video {
-  height: 100%;
-  width: auto;
-  object-fit: contain; /* <-- IMPORTANT CHANGE */
-  max-width: 100%;     /* prevents horizontal overflow */
+  height: 100%;            /* scale by height */
+  width: auto;             /* keep vertical proportions */
+  object-fit: cover;       /* fill the hero area */
+  transform: translateX(0); /* ensures centering */
 }
 
 .video-overlay {
