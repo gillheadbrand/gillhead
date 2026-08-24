@@ -692,19 +692,22 @@ footer {
   border-radius: 10px;
   border: 2px solid var(--kelly);
 }
+
 .video-hero {
   position: relative;
   width: 100%;
-  height: 70vh; /* adjust height if needed */
+  height: 70vh;        /* your hero height stays consistent */
   overflow: hidden;
-  border-radius: 12px; /* matches your site style */
-  margin-bottom: 40px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .video-hero video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* fills the hero area */
+  height: 100%;        /* video grows to fill height */
+  width: auto;         /* prevents horizontal stretching */
+  object-fit: cover;   /* fills hero without black bars */
 }
 
 .video-overlay {
