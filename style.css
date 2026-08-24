@@ -696,7 +696,7 @@ footer {
 .video-hero {
   position: relative;
   width: 100%;
-  height: 70vh;        /* your hero height stays consistent */
+  height: 70vh;
   overflow: hidden;
   border-radius: 12px;
   display: flex;
@@ -704,10 +704,12 @@ footer {
   align-items: center;
 }
 
+/* Scale by height ALWAYS */
 .video-hero video {
-  height: 100%;        /* video grows to fill height */
-  width: auto;         /* prevents horizontal stretching */
-  object-fit: cover;   /* fills hero without black bars */
+  height: 100%;
+  width: auto;
+  object-fit: contain; /* <-- IMPORTANT CHANGE */
+  max-width: 100%;     /* prevents horizontal overflow */
 }
 
 .video-overlay {
